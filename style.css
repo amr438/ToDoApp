@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --blue-color: #0075ff;
+  --blue-alt-color: #0d69d5;
+  --orange-color: #f59e0b;
+  --green-color: #22c55e;
+  --red-color: #f44336;
+  --grey-color: #888;
+  --black-color: #454545ec;
+  --black-shadow-color: #3d3d3d;
+  --font-family: "Noto Naskh Arabic";
+}
+
+body {
+  font-family: sans-serif;
+  background-color: white;
+}
+.main {
+  margin: 40px auto;
+}
+.main div {
+  flex-grow: 1;
+}
+.main,
+.Task{
+  width: 90%;
+  background-color: #ddd;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+}
+.Task {
+  margin: 15px auto;
+  border-radius: 6px;
+  transition: .3s;
+  
+}
+.main input ,
+.Task p ,
+.input-edit{
+  width: 70%;
+  border: none;
+  outline: none;
+  padding: 7px;
+  border-radius: 5px;
+  font-size: 18px;
+  display: block;
+  background-color: white;
+}
+.Task p , 
+.input-edit {
+  width: 55%;
+}
+.main div button ,
+.Task  button ,
+.Task div span{
+  width: 18%;
+  padding: 7px;
+  outline: none;
+  border: none;
+  border-radius: 6px;
+  height: 100%;
+  font-size: 1.2rem;
+  margin-left: 5px;
+  background-color: var(--blue-color);
+  color: white;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  transition: .3s;
+}
+@media (max-width:400px) {
+  .main div button ,
+.Task  button ,
+.Task div span {
+  font-size: 1rem;
+}
+}
+.main div button {
+  width: 100%;
+}
+.Task button {
+  width: 50%;
+}
+.main button::before , 
+.Task button::before,
+.Task div span::before{
+  content: "";
+  position: absolute;
+  border-radius: 6px;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 100%;
+  background-color: var(--blue-alt-color);
+  z-index: -1;
+  transition: .3s;
+}
+.main button:hover::before ,
+.Task button:hover::before,
+.Task div span:hover::before{
+  width: 100%;
+  box-shadow: 1px 1px 10px 4px white;
+}
+.Task div {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 5px;
+  width: 30%;
+  
+}
+.Task div span {
+  width: 50%;
+  text-align: center;
+}
+.Task div {
+  flex-grow: 1;
+}
